@@ -11,19 +11,23 @@ import AVFoundation
 
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
  
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     @IBOutlet weak var stopRecordingButton: UIButton!
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var startRecordingButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
     var audioRecorder: AVAudioRecorder!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        stopRecordingButton.isEnabled = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateIsEnabledForButtons(false)
     }
     
     func setLabelStatus(_ statusText : String) {
@@ -43,20 +47,13 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        updateIsEnabledForButtons(false)
-    }
-
-
     @IBAction func recordAudio(_ sender: Any) {
-        
         updateIsEnabledForButtons(true)
+        
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
         let filePath = URL(string: pathArray.joined(separator: "/"))
-        print(filePath!)
         
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, with:AVAudioSessionCategoryOptions.defaultToSpeaker)

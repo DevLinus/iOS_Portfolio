@@ -16,11 +16,10 @@ class PlaySoundsViewController: UIViewController {
     @IBOutlet weak var rabbitButton: UIButton!
     @IBOutlet weak var echoButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
-    
     @IBOutlet weak var reverbButton: UIButton!
+
     var recordedAudioURL: URL!
     var audioFile:AVAudioFile!
-   
     var audioEngine:AVAudioEngine!
     var audioPlayerNode: AVAudioPlayerNode!
     var stopTimer: Timer!
