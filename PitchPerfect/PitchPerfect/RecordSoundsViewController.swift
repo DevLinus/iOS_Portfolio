@@ -36,10 +36,10 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         
         if isRecording
         {
-           setLabelStatus("Recording in Progress")
+            setLabelStatus("Recording in Progress")
         }else
         {
-           setLabelStatus("Tap to Recording")
+            setLabelStatus("Tap to Recording")
         }
     }
     
