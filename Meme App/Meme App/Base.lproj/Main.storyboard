@@ -20,26 +20,38 @@
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lsE-5P-ZDM">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="71v-Jd-dJZ">
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="71v-Jd-dJZ" userLabel="Top Toolbar">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="Zhf-x9-z7s"/>
                                         </constraints>
                                         <items>
-                                            <barButtonItem title="Share" id="Rus-iY-Lp6"/>
+                                            <barButtonItem title="Share" id="Rus-iY-Lp6">
+                                                <connections>
+                                                    <action selector="shareMemeClick:" destination="BYZ-38-t0r" id="sdi-sG-kD3"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </items>
                                     </toolbar>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gZK-aS-Oec">
                                         <rect key="frame" x="0.0" y="44" width="414" height="648"/>
                                     </imageView>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fuI-FU-a0c">
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fuI-FU-a0c" userLabel="Image Picker Toolbar">
                                         <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="S99-NG-dzb"/>
                                         </constraints>
                                         <items>
-                                            <barButtonItem title="Pick Image" id="l68-8s-Nws" userLabel="Pick Image"/>
-                                            <barButtonItem title="Take a Picture" id="692-9j-QPq" userLabel="Take a Picture"/>
+                                            <barButtonItem title="Pick Image" id="l68-8s-Nws" userLabel="Pick Image">
+                                                <connections>
+                                                    <action selector="imagePickerClick:" destination="BYZ-38-t0r" id="LNC-Gz-qkJ"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Take a Picture" id="692-9j-QPq" userLabel="Take a Picture">
+                                                <connections>
+                                                    <action selector="takeAPictureClick:" destination="BYZ-38-t0r" id="oWi-wS-3h9"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </items>
                                     </toolbar>
                                 </subviews>
@@ -47,33 +59,41 @@
                                     <constraint firstItem="71v-Jd-dJZ" firstAttribute="top" secondItem="lsE-5P-ZDM" secondAttribute="top" id="Ejt-ts-WFJ"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHu-SG-sp5">
-                                <rect key="frame" x="0.0" y="80" width="414" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hallo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bif-gQ-Ykq">
+                                <rect key="frame" x="0.0" y="120" width="414" height="17"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4z-IZ-Wti" userLabel="Bottom">
-                                <rect key="frame" x="0.0" y="615.66666666666652" width="414" height="20.333333333333371"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkJ-jD-XDr">
+                                <rect key="frame" x="0.0" y="619" width="414" height="17"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lsE-5P-ZDM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="2Mp-Ye-jDg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r4z-IZ-Wti" secondAttribute="trailing" id="2ai-FP-SOF"/>
-                            <constraint firstItem="UHu-SG-sp5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="4Mw-6S-GwR"/>
-                            <constraint firstItem="UHu-SG-sp5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="4Z5-Yb-R09"/>
-                            <constraint firstItem="UHu-SG-sp5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="86z-6w-XpY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r4z-IZ-Wti" secondAttribute="bottom" constant="100" id="GJr-6t-MPn"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UHu-SG-sp5" secondAttribute="trailing" id="KxN-dD-3G5"/>
+                            <constraint firstItem="PkJ-jD-XDr" firstAttribute="width" secondItem="gZK-aS-Oec" secondAttribute="width" id="6Wv-ns-pxj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PkJ-jD-XDr" secondAttribute="bottom" constant="100" id="L29-jp-Tpd"/>
+                            <constraint firstAttribute="trailing" secondItem="PkJ-jD-XDr" secondAttribute="trailing" id="L7t-zo-q1H"/>
                             <constraint firstItem="lsE-5P-ZDM" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="WqK-fC-NF9"/>
-                            <constraint firstItem="r4z-IZ-Wti" firstAttribute="width" secondItem="gZK-aS-Oec" secondAttribute="width" id="ju5-vA-s5h"/>
+                            <constraint firstItem="bif-gQ-Ykq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="dX9-gM-cqe"/>
+                            <constraint firstItem="bif-gQ-Ykq" firstAttribute="width" secondItem="gZK-aS-Oec" secondAttribute="width" id="vY2-xk-bcK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="SharePictureToolBar" destination="71v-Jd-dJZ" id="gvM-19-Rk8"/>
+                        <outlet property="TopLabel" destination="bif-gQ-Ykq" id="3f4-8z-W4a"/>
+                        <outlet property="bottomLabel" destination="PkJ-jD-XDr" id="mNv-dK-AgK"/>
+                        <outlet property="imagePickerClick" destination="l68-8s-Nws" id="8bY-cc-ByE"/>
+                        <outlet property="imagePickerToolBar" destination="fuI-FU-a0c" id="Zed-qU-TQG"/>
+                        <outlet property="memeImageView" destination="gZK-aS-Oec" id="nSN-fx-fi6"/>
+                        <outlet property="takeAPictureClick" destination="692-9j-QPq" id="JyV-ub-ULu"/>
+                        <outlet property="topLabel" destination="bif-gQ-Ykq" id="3Ew-tw-cqs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
