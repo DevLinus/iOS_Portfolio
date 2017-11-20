@@ -11,27 +11,56 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var memeImageView: UIImageView!
-    @IBOutlet weak var bottomLabel: UITextField!
-    @IBOutlet weak var topLabel: UITextField!
+    @IBOutlet weak var bottomEditField: UITextField!
+    @IBOutlet weak var topEditField: UITextField!
     @IBOutlet weak var imagePickerToolBar: UIToolbar!
     @IBOutlet weak var SharePictureToolBar: UIToolbar!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    let textViewDelegate = TextFieldDelegate()
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       // image.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        topEditField.delegate =  textViewDelegate
+        bottomEditField.delegate = textViewDelegate
+        topEditField.defaultTextAttributes = memeTextAttributes
+        bottomEditField.defaultTextAttributes = memeTextAttributes
+        subscribeToKeyboardNotifications()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @objc func keyboardWillShow(_ notification:Notification) {
+        view.frame.origin.y = 0 - getKeyboardHeight(notification)
+    }
+    
+    func subscribeToKeyboardNotifications() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboarWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+    }
+    
+    @objc func keyboarWillHide(_ notification:Notification) {
+        view.frame.origin.y = 0
     }
 
     
     @IBAction func imagePickerClick(_ sender: Any) {
+        
     }
     
     @IBAction func takeAPictureClick(_ sender: Any) {
     }
     @IBAction func shareMemeClick(_ sender: Any) {
+    }
+    
+    func getKeyboardHeight(_ notification:Notification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        return keyboardSize.cgRectValue.height
     }
     
 }

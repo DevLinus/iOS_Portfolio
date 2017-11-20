@@ -57,6 +57,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="71v-Jd-dJZ" firstAttribute="top" secondItem="lsE-5P-ZDM" secondAttribute="top" id="Ejt-ts-WFJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="fuI-FU-a0c" secondAttribute="bottom" constant="10" id="xy2-6x-omY"/>
                                 </constraints>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hallo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bif-gQ-Ykq">
@@ -86,13 +87,10 @@
                     </view>
                     <connections>
                         <outlet property="SharePictureToolBar" destination="71v-Jd-dJZ" id="gvM-19-Rk8"/>
-                        <outlet property="TopLabel" destination="bif-gQ-Ykq" id="3f4-8z-W4a"/>
-                        <outlet property="bottomLabel" destination="PkJ-jD-XDr" id="mNv-dK-AgK"/>
-                        <outlet property="imagePickerClick" destination="l68-8s-Nws" id="8bY-cc-ByE"/>
+                        <outlet property="bottomEditField" destination="PkJ-jD-XDr" id="mNv-dK-AgK"/>
                         <outlet property="imagePickerToolBar" destination="fuI-FU-a0c" id="Zed-qU-TQG"/>
                         <outlet property="memeImageView" destination="gZK-aS-Oec" id="nSN-fx-fi6"/>
-                        <outlet property="takeAPictureClick" destination="692-9j-QPq" id="JyV-ub-ULu"/>
-                        <outlet property="topLabel" destination="bif-gQ-Ykq" id="3Ew-tw-cqs"/>
+                        <outlet property="topEditField" destination="bif-gQ-Ykq" id="DvH-2x-9YN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
