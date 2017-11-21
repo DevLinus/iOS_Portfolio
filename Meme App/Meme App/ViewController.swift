@@ -10,11 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var memeImageView: UIImageView!
-    @IBOutlet weak var bottomEditField: UITextField!
-    @IBOutlet weak var topEditField: UITextField!
-    @IBOutlet weak var imagePickerToolBar: UIToolbar!
-    @IBOutlet weak var SharePictureToolBar: UIToolbar!
+   
     
     let textViewDelegate = TextFieldDelegate()
     
@@ -22,10 +18,10 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
        // image.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        topEditField.delegate =  textViewDelegate
-        bottomEditField.delegate = textViewDelegate
-        topEditField.defaultTextAttributes = memeTextAttributes
-        bottomEditField.defaultTextAttributes = memeTextAttributes
+      //  topEditField.delegate =  textViewDelegate
+        //bottomEditField.delegate = textViewDelegate
+       // topEditField.defaultTextAttributes = memeTextAttributes
+     //   bottomEditField.defaultTextAttributes = memeTextAttributes
         subscribeToKeyboardNotifications()
     }
     
