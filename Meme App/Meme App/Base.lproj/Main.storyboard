@@ -23,14 +23,14 @@
                                     <constraint firstAttribute="height" constant="44" id="z1X-vt-fVb"/>
                                 </constraints>
                                 <items>
+                                    <barButtonItem systemItem="camera" id="rD0-mW-eaL">
+                                        <connections>
+                                            <action selector="takeAPictureClick:" destination="BYZ-38-t0r" id="VRc-k9-iHQ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Pick Image" id="Twb-B1-MCX">
                                         <connections>
                                             <action selector="imagePickerClick:" destination="BYZ-38-t0r" id="yPL-3U-4c0"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Take a Picture" id="rD0-mW-eaL">
-                                        <connections>
-                                            <action selector="takeAPictureClick:" destination="BYZ-38-t0r" id="VRc-k9-iHQ"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -41,7 +41,7 @@
                                     <constraint firstAttribute="height" constant="44" id="Zyq-Nh-Zix"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Share" id="nGP-dQ-xsp">
+                                    <barButtonItem systemItem="action" id="nGP-dQ-xsp">
                                         <connections>
                                             <action selector="shareMemeClick:" destination="BYZ-38-t0r" id="qFO-aR-W73"/>
                                         </connections>
@@ -89,6 +89,7 @@
                         <outlet property="bottomTextField" destination="sKt-qb-SEN" id="yiM-RK-EaA"/>
                         <outlet property="bottomToolBar" destination="qgz-kH-STv" id="PUC-2j-YAz"/>
                         <outlet property="memeImageView" destination="ahw-L8-jdm" id="DBo-pM-URG"/>
+                        <outlet property="shareButton" destination="nGP-dQ-xsp" id="lLl-rw-E0S"/>
                         <outlet property="takeAPictureButton" destination="rD0-mW-eaL" id="dij-ql-ljb"/>
                         <outlet property="topTextField" destination="mSZ-F7-3TW" id="oAJ-57-jNc"/>
                         <outlet property="topToolBar" destination="Qbp-3D-kDK" id="mKL-X9-Tyc"/>

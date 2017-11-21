@@ -12,6 +12,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
    
     
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var topToolBar: UIToolbar!
     @IBOutlet weak var bottomToolBar: UIToolbar!
     @IBOutlet weak var bottomTextField: UITextField!
@@ -33,6 +34,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         setUPTextField(textField: bottomTextField)
         takeAPictureButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
+        shareButton.isEnabled = false
+        
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
@@ -105,6 +108,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             memeImageView.contentMode = .scaleAspectFill
             memeImageView.image = UIImage.scaleImageToSize(img: image, size: CGSize(width: 343, height: 505))
             dismiss(animated: true, completion: nil)
+            shareButton.isEnabled = true
+            
         }
     }
     
