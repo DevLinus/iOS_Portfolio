@@ -23,6 +23,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func setUPTextField (textField : UITextField){
         textField.delegate = textViewDelegate
         textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
     }
     
     
@@ -39,7 +40,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func subscribeToKeyboardNotifications() {
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboarWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
     }
@@ -106,7 +106,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             memeImageView.image = UIImage.scaleImageToSize(img: image, size: CGSize(width: 343, height: 505))
             dismiss(animated: true, completion: nil)
         }
-        //memeImageView.image = generateMemedImage()
     }
     
     
