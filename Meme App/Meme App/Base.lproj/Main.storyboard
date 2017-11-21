@@ -38,9 +38,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-L8-jdm">
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mSZ-F7-3TW">
-                                <rect key="frame" x="139" y="164" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Top" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mSZ-F7-3TW">
+                                <rect key="frame" x="10" y="94" width="355" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bottom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sKt-qb-SEN">
+                                <rect key="frame" x="0.0" y="576" width="375" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -54,8 +59,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qgz-kH-STv" secondAttribute="bottom" id="Qe2-Cs-bhv"/>
                             <constraint firstItem="qgz-kH-STv" firstAttribute="top" secondItem="ahw-L8-jdm" secondAttribute="bottom" id="Yhc-Ry-JLu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ahw-L8-jdm" secondAttribute="trailing" id="aJC-KC-Jmv"/>
+                            <constraint firstItem="mSZ-F7-3TW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="aa6-p4-Ci8"/>
+                            <constraint firstItem="sKt-qb-SEN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cu6-OP-10p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sKt-qb-SEN" secondAttribute="trailing" id="fcm-w8-1Eh"/>
                             <constraint firstItem="Qbp-3D-kDK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="h2p-d8-Buy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mSZ-F7-3TW" secondAttribute="trailing" constant="10" id="jDK-SJ-4a2"/>
+                            <constraint firstItem="qgz-kH-STv" firstAttribute="top" secondItem="sKt-qb-SEN" secondAttribute="bottom" constant="30" id="msb-2O-wSe"/>
                             <constraint firstItem="qgz-kH-STv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="qho-gE-5Mx"/>
+                            <constraint firstItem="mSZ-F7-3TW" firstAttribute="top" secondItem="Qbp-3D-kDK" secondAttribute="bottom" constant="30" id="svm-g7-QeO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
