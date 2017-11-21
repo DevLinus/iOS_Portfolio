@@ -70,7 +70,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         excecutePickerControler(sourceType: .camera)
     }
     @IBAction func shareMemeClick(_ sender: Any) {
+        let imageToShare = [ generateMemedImage() ]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
