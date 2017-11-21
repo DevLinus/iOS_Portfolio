@@ -55,11 +55,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         view.frame.origin.y = 0
     }
 
-    
     @IBAction func imagePickerClick(_ sender: Any) {
         excecutePickerControler(sourceType: .photoLibrary)
     }
-    
+
     
     fileprivate func excecutePickerControler(sourceType : UIImagePickerControllerSourceType ) {
         let picController = UIImagePickerController()
@@ -73,7 +72,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         excecutePickerControler(sourceType: .camera)
     }
     @IBAction func shareMemeClick(_ sender: Any) {
-        let imageToShare = [ generateMemedImage() ]
+        var memeDataHolder = memeStorage(oldImage: memeImageView.image!, newImage: generateMemedImage())
+    
+        let imageToShare = [memeDataHolder.newImage]
         let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
@@ -106,10 +107,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             memeImageView.contentMode = .scaleAspectFill
-            memeImageView.image = UIImage.scaleImageToSize(img: image, size: CGSize(width: 343, height: 505))
+            memeImageView.image = UIImage.scaleImageToSize(imgage: image,size: memeImageView.frame.size)// size: CGSize(width: 343, height: 505))
             dismiss(animated: true, completion: nil)
             shareButton.isEnabled = true
-            
         }
     }
     

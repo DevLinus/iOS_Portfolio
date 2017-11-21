@@ -8,3 +8,11 @@ let memeTextAttributes:[String:Any] = [
     NSAttributedStringKey.strokeWidth.rawValue: 4.0,
     ]
 
+struct memeStorage {
+    var oldImage : UIImage
+    var newImage : UIImage
+    var textTopTextField : String
+    var textBottomTextField : String
+    
+}
+

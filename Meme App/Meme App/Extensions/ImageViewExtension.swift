@@ -3,11 +3,11 @@ import UIKit
 
 extension UIImage{
     
-    class func scaleImageToSize(img: UIImage, size: CGSize) ->UIImage{
+    class func scaleImageToSize(imgage: UIImage, size: CGSize) ->UIImage{
         UIGraphicsBeginImageContext(size)
-        img.draw(in: CGRect(origin: CGPoint.zero, size: size))
-        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        imgage.draw(in: CGRect(origin: CGPoint.zero, size: size))
+        let scaledImageByContext = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return scaledImage!
+        return scaledImageByContext!
     }
 }
