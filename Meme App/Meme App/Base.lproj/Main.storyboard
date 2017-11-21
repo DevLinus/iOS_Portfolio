@@ -17,13 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qgz-kH-STv">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgz-kH-STv" userLabel="BottomToolbar">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="z1X-vt-fVb"/>
                                 </constraints>
                                 <items>
                                     <barButtonItem title="Pick Image" id="Twb-B1-MCX"/>
+                                    <barButtonItem title="Take a Picture" id="rD0-mW-eaL"/>
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qbp-3D-kDK">
@@ -35,7 +36,7 @@
                                     <barButtonItem title="Item 2" id="nGP-dQ-xsp"/>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-L8-jdm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-L8-jdm">
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Top" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mSZ-F7-3TW">
@@ -53,11 +54,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="qgz-kH-STv" firstAttribute="leading" secondItem="ahw-L8-jdm" secondAttribute="leading" id="7rf-tD-hZa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qbp-3D-kDK" secondAttribute="trailing" id="ApP-NR-r9U"/>
                             <constraint firstItem="ahw-L8-jdm" firstAttribute="top" secondItem="Qbp-3D-kDK" secondAttribute="bottom" id="D4z-D5-TQr"/>
                             <constraint firstItem="Qbp-3D-kDK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="I0v-fh-2qw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qgz-kH-STv" secondAttribute="bottom" id="Qe2-Cs-bhv"/>
                             <constraint firstItem="qgz-kH-STv" firstAttribute="top" secondItem="ahw-L8-jdm" secondAttribute="bottom" id="Yhc-Ry-JLu"/>
+                            <constraint firstItem="qgz-kH-STv" firstAttribute="leading" secondItem="sKt-qb-SEN" secondAttribute="leading" id="Z8a-Ea-jhC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ahw-L8-jdm" secondAttribute="trailing" id="aJC-KC-Jmv"/>
                             <constraint firstItem="mSZ-F7-3TW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="aa6-p4-Ci8"/>
                             <constraint firstItem="sKt-qb-SEN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cu6-OP-10p"/>
@@ -70,6 +73,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomTextField" destination="sKt-qb-SEN" id="yiM-RK-EaA"/>
+                        <outlet property="bottomToolBar" destination="qgz-kH-STv" id="PUC-2j-YAz"/>
+                        <outlet property="memeImageView" destination="ahw-L8-jdm" id="DBo-pM-URG"/>
+                        <outlet property="takeAPictureButton" destination="rD0-mW-eaL" id="dij-ql-ljb"/>
+                        <outlet property="topTextField" destination="mSZ-F7-3TW" id="oAJ-57-jNc"/>
+                        <outlet property="topToolBar" destination="Qbp-3D-kDK" id="mKL-X9-Tyc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

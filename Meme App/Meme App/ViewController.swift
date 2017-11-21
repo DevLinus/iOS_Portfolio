@@ -12,16 +12,25 @@ class ViewController: UIViewController {
 
    
     
+    @IBOutlet weak var topToolBar: UIToolbar!
+    @IBOutlet weak var bottomToolBar: UIToolbar!
+    @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var memeImageView: UIImageView!
+    @IBOutlet weak var takeAPictureButton: UIBarButtonItem!
     let textViewDelegate = TextFieldDelegate()
+    
+    func setUPTextField (textField : UITextField){
+        textField.delegate = textViewDelegate
+        textField.defaultTextAttributes = memeTextAttributes
+    }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       // image.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-      //  topEditField.delegate =  textViewDelegate
-        //bottomEditField.delegate = textViewDelegate
-       // topEditField.defaultTextAttributes = memeTextAttributes
-     //   bottomEditField.defaultTextAttributes = memeTextAttributes
+        setUPTextField(textField: topTextField)
+        setUPTextField(textField: bottomTextField)
+        takeAPictureButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
     }
     
