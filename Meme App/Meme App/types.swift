@@ -6,6 +6,9 @@ let memeTextAttributes:[String:Any] = [
     NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
     NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
     NSAttributedStringKey.strokeWidth.rawValue: -4.0,
+    // reason because the value must be negative
+    // https://developer.apple.com/library/content/qa/qa1531/_index.html
+    
     ]
 
 struct memeStorage {
