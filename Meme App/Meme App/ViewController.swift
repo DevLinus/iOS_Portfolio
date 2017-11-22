@@ -35,7 +35,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     fileprivate func setPictureAndShareButtonEnabled() {
         takeAPictureButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
-        shareButton.isEnabled = false
+        if memeImageView.image == nil {
+            shareButton.isEnabled = false
+        }
     }
     
     fileprivate func SetupGUI() {
