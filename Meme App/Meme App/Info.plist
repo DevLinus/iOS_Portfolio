@@ -6,6 +6,8 @@
 	<string>We need this for add the memes to your libary</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Please give us access to your cam. Then you can make Pictures for your Mems.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We want save your new Meme to your Libary</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
