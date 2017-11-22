@@ -11,7 +11,8 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
    
-    
+    @IBOutlet weak var imagePickerButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var topToolBar: UIToolbar!
     @IBOutlet weak var bottomToolBar: UIToolbar!
@@ -35,6 +36,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         takeAPictureButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
         shareButton.isEnabled = false
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        topToolBar.items = [shareButton, space, cancelButton]
+        bottomToolBar.items = [space,takeAPictureButton,space, imagePickerButton, space]
         
     }
     
@@ -72,7 +76,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         excecutePickerControler(sourceType: .camera)
     }
     @IBAction func shareMemeClick(_ sender: Any) {
-        var memeDataHolder = memeStorage(oldImage: memeImageView.image!, newImage: generateMemedImage())
+        let memeDataHolder = memeStorage(oldImage: memeImageView.image!, newImage: generateMemedImage(), textTopTextField: topTextField.text!, textBottomTextField: bottomTextField.text!)
     
         let imageToShare = [memeDataHolder.newImage]
         let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)

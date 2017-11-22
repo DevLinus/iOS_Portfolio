@@ -46,6 +46,7 @@
                                             <action selector="shareMemeClick:" destination="BYZ-38-t0r" id="qFO-aR-W73"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem systemItem="cancel" id="ztt-VV-MmO" userLabel="Cancel"/>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-L8-jdm">
@@ -88,6 +89,8 @@
                     <connections>
                         <outlet property="bottomTextField" destination="sKt-qb-SEN" id="yiM-RK-EaA"/>
                         <outlet property="bottomToolBar" destination="qgz-kH-STv" id="PUC-2j-YAz"/>
+                        <outlet property="cancelButton" destination="ztt-VV-MmO" id="2x4-aS-O4T"/>
+                        <outlet property="imagePickerButton" destination="Twb-B1-MCX" id="wcg-S3-Ag6"/>
                         <outlet property="memeImageView" destination="ahw-L8-jdm" id="DBo-pM-URG"/>
                         <outlet property="shareButton" destination="nGP-dQ-xsp" id="lLl-rw-E0S"/>
                         <outlet property="takeAPictureButton" destination="rD0-mW-eaL" id="dij-ql-ljb"/>
