@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  Meme App
-//
-//  Created by Florian Middendorf on 20.11.17.
-//  Copyright © 2017 Florian Middendorf. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -21,6 +13,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var memeImageView: UIImageView!
     @IBOutlet weak var takeAPictureButton: UIBarButtonItem!
     let textViewDelegate = TextFieldDelegate()
+    
+    @IBAction func cancelButtonClick(_ sender: Any) {
+        memeImageView.image = UIImage()
+        shareButton.isEnabled = false
+    }
     
     func setUPTextField (textField : UITextField){
         textField.delegate = textViewDelegate

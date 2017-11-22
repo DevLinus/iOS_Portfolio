@@ -46,7 +46,11 @@
                                             <action selector="shareMemeClick:" destination="BYZ-38-t0r" id="qFO-aR-W73"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem systemItem="cancel" id="ztt-VV-MmO" userLabel="Cancel"/>
+                                    <barButtonItem systemItem="cancel" id="ztt-VV-MmO" userLabel="Cancel">
+                                        <connections>
+                                            <action selector="cancelButtonClick:" destination="BYZ-38-t0r" id="lmz-9V-bhd"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-L8-jdm">
