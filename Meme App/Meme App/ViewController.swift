@@ -29,16 +29,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setUPTextField(textField: topTextField)
-        setUPTextField(textField: bottomTextField)
-        takeAPictureButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        subscribeToKeyboardNotifications()
-        shareButton.isEnabled = false
+    fileprivate func setUpToolbarsWithSpaceHolder() {
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         topToolBar.items = [shareButton, space, cancelButton]
         bottomToolBar.items = [space,takeAPictureButton,space, imagePickerButton, space]
+    }
+    
+    fileprivate func setPictureAndShareButtonEnabled() {
+        takeAPictureButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        subscribeToKeyboardNotifications()
+        shareButton.isEnabled = false
+    }
+    
+    fileprivate func SetupGUI() {
+        setUPTextField(textField: topTextField)
+        setUPTextField(textField: bottomTextField)
+        setPictureAndShareButtonEnabled()
+        setUpToolbarsWithSpaceHolder()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SetupGUI()
         
     }
     
