@@ -122,7 +122,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             memeImageView.contentMode = .scaleAspectFill
-            memeImageView.image = UIImage.scaleImageToSize(imgage: image,size: memeImageView.frame.size)// size: CGSize(width: 343, height: 505))
+            memeImageView.image = image 
             dismiss(animated: true, completion: nil)
             shareButton.isEnabled = true
         }
