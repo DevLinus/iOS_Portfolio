@@ -11,11 +11,10 @@ let memeTextAttributes:[String:Any] = [
     
     ]
 
-struct memeStorage {
+struct MemeStorage {
     var oldImage : UIImage
     var newImage : UIImage
     var textTopTextField : String
     var textBottomTextField : String
-    
 }
 

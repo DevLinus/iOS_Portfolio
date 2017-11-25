@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
    
     @IBOutlet weak var imagePickerButton: UIBarButtonItem!
@@ -59,14 +59,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func subscribeToKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboarWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
     }
     
     func unsubscribeFromKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
     }
     
-    @objc func keyboarWillHide(_ notification:Notification) {
+    @objc func keyboardWillHide(_ notification:Notification) {
         view.frame.origin.y = 0
     }
 
@@ -87,7 +87,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         excecutePickerControler(sourceType: .camera)
     }
     @IBAction func shareMemeClick(_ sender: Any) {
-        let memeDataHolder = memeStorage(oldImage: memeImageView.image!, newImage: generateMemedImage(), textTopTextField: topTextField.text!, textBottomTextField: bottomTextField.text!)
+        let memeDataHolder = MemeStorage(oldImage: memeImageView.image!, newImage: generateMemedImage(), textTopTextField: topTextField.text!, textBottomTextField: bottomTextField.text!)
     
         let imageToShare = [memeDataHolder.newImage]
         let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
@@ -122,7 +122,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             memeImageView.contentMode = .scaleAspectFill
-            memeImageView.image = image 
+            memeImageView.image = image
             dismiss(animated: true, completion: nil)
             shareButton.isEnabled = true
         }
