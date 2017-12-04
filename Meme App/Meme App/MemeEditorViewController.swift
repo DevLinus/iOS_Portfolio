@@ -121,7 +121,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            memeImageView.contentMode = .scaleAspectFill
+            memeImageView.contentMode = .scaleAspectFit
             memeImageView.image = image
             dismiss(animated: true, completion: nil)
             shareButton.isEnabled = true
