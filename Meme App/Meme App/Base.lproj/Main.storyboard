@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,6 +20,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgz-kH-STv" userLabel="BottomToolbar">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="C0V-50-4gW"/>
                                     <constraint firstAttribute="height" constant="44" id="z1X-vt-fVb"/>
                                 </constraints>
                                 <items>
@@ -39,6 +40,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Zyq-Nh-Zix"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="iVN-JE-mIz"/>
                                 </constraints>
                                 <items>
                                     <barButtonItem systemItem="action" id="nGP-dQ-xsp">
@@ -53,17 +55,17 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-L8-jdm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-L8-jdm">
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Top" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mSZ-F7-3TW">
-                                <rect key="frame" x="10" y="94" width="355" height="17"/>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Top" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mSZ-F7-3TW">
+                                <rect key="frame" x="0.0" y="335" width="375" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Bottom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sKt-qb-SEN">
-                                <rect key="frame" x="0.0" y="576" width="375" height="17"/>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Bottom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sKt-qb-SEN">
+                                <rect key="frame" x="0.0" y="435" width="51.5" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -71,22 +73,21 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="qgz-kH-STv" firstAttribute="leading" secondItem="ahw-L8-jdm" secondAttribute="leading" id="7rf-tD-hZa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qbp-3D-kDK" secondAttribute="trailing" id="ApP-NR-r9U"/>
-                            <constraint firstItem="ahw-L8-jdm" firstAttribute="top" secondItem="Qbp-3D-kDK" secondAttribute="bottom" id="D4z-D5-TQr"/>
-                            <constraint firstItem="Qbp-3D-kDK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="I0v-fh-2qw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qgz-kH-STv" secondAttribute="bottom" id="Qe2-Cs-bhv"/>
-                            <constraint firstItem="qgz-kH-STv" firstAttribute="top" secondItem="ahw-L8-jdm" secondAttribute="bottom" id="Yhc-Ry-JLu"/>
-                            <constraint firstItem="qgz-kH-STv" firstAttribute="leading" secondItem="sKt-qb-SEN" secondAttribute="leading" id="Z8a-Ea-jhC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ahw-L8-jdm" secondAttribute="trailing" id="aJC-KC-Jmv"/>
-                            <constraint firstItem="mSZ-F7-3TW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="aa6-p4-Ci8"/>
-                            <constraint firstItem="sKt-qb-SEN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cu6-OP-10p"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sKt-qb-SEN" secondAttribute="trailing" id="fcm-w8-1Eh"/>
-                            <constraint firstItem="Qbp-3D-kDK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="h2p-d8-Buy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mSZ-F7-3TW" secondAttribute="trailing" constant="10" id="jDK-SJ-4a2"/>
-                            <constraint firstItem="qgz-kH-STv" firstAttribute="top" secondItem="sKt-qb-SEN" secondAttribute="bottom" constant="30" id="msb-2O-wSe"/>
-                            <constraint firstItem="qgz-kH-STv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="qho-gE-5Mx"/>
-                            <constraint firstItem="mSZ-F7-3TW" firstAttribute="top" secondItem="Qbp-3D-kDK" secondAttribute="bottom" constant="30" id="svm-g7-QeO"/>
+                            <constraint firstItem="Qbp-3D-kDK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="01c-Kg-8m4"/>
+                            <constraint firstItem="sKt-qb-SEN" firstAttribute="width" secondItem="ahw-L8-jdm" secondAttribute="width" id="0V9-dS-fHs"/>
+                            <constraint firstItem="mSZ-F7-3TW" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="3Jr-2g-af5"/>
+                            <constraint firstItem="Qbp-3D-kDK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="833-DJ-MbC"/>
+                            <constraint firstItem="ahw-L8-jdm" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="A7E-4D-5lY"/>
+                            <constraint firstItem="Qbp-3D-kDK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BZq-CD-Hn1"/>
+                            <constraint firstItem="sKt-qb-SEN" firstAttribute="centerY" relation="greaterThanOrEqual" secondItem="ahw-L8-jdm" secondAttribute="centerY" constant="100" id="RmR-DX-N8a"/>
+                            <constraint firstItem="ahw-L8-jdm" firstAttribute="top" secondItem="Qbp-3D-kDK" secondAttribute="bottom" id="Zau-t9-aYV"/>
+                            <constraint firstItem="qgz-kH-STv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dlG-zg-icp"/>
+                            <constraint firstItem="qgz-kH-STv" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qxY-bG-san"/>
+                            <constraint firstItem="qgz-kH-STv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rO7-n8-qoH"/>
+                            <constraint firstItem="mSZ-F7-3TW" firstAttribute="centerY" relation="lessThanOrEqual" secondItem="ahw-L8-jdm" secondAttribute="centerY" constant="-100" id="vN2-kc-4VY"/>
+                            <constraint firstItem="mSZ-F7-3TW" firstAttribute="centerX" secondItem="ahw-L8-jdm" secondAttribute="centerX" id="vNO-eg-Fsb"/>
+                            <constraint firstItem="qgz-kH-STv" firstAttribute="top" secondItem="ahw-L8-jdm" secondAttribute="bottom" id="wU9-Kx-iEu"/>
+                            <constraint firstItem="Qbp-3D-kDK" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="woZ-bf-Drm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
