@@ -12,6 +12,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var memeImageView: UIImageView!
     @IBOutlet weak var takeAPictureButton: UIBarButtonItem!
+    var memeDataHolder: MemeStorage!
     let textViewDelegate = TextFieldDelegate()
     
     @IBAction func cancelButtonClick(_ sender: Any) {
@@ -89,11 +90,25 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction func takeAPictureClick(_ sender: Any) {
         excecutePickerControler(sourceType: .camera)
     }
-    @IBAction func shareMemeClick(_ sender: Any) {
-        let memeDataHolder = MemeStorage(oldImage: memeImageView.image!, newImage: generateMemedImage(), textTopTextField: topTextField.text!, textBottomTextField: bottomTextField.text!)
     
-        let imageToShare = [memeDataHolder.newImage]
+    func save (){
+       memeDataHolder  = MemeStorage(oldImage: memeImageView.image!, newImage: generateMemedImage(), textTopTextField: topTextField.text!, textBottomTextField: bottomTextField.text!)
+    }
+    
+    @IBAction func shareMemeClick(_ sender: Any) {
+        
+        
+        let imageToShare = [generateMemedImage()]
         let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activityViewController.completionWithItemsHandler = {
+            (activityType, completed, items, error) in
+        if !completed {
+                print("User cancelled.")
+                return
+            }
+            self.save()
+        }
+        
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
         self.present(activityViewController, animated: true, completion: nil)
