@@ -24,6 +24,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         textField.delegate = textViewDelegate
         textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = .center
+        
     }
     
     
@@ -42,8 +43,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     fileprivate func SetupGUI() {
-        setUPTextField(textField: topTextField)
         setUPTextField(textField: bottomTextField)
+        setUPTextField(textField: topTextField)
+        topTextField.attributedPlaceholder = NSAttributedString(string: "Top",
+                                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        bottomTextField.attributedPlaceholder = NSAttributedString(string: "Bottom",
+                                                                   attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        
         setPictureAndShareButtonEnabled()
         setUpToolbarsWithSpaceHolder()
     }
