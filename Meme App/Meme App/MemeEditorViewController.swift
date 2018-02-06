@@ -45,9 +45,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     fileprivate func SetupGUI() {
         setUPTextField(textField: bottomTextField)
         setUPTextField(textField: topTextField)
-        topTextField.attributedPlaceholder = NSAttributedString(string: "Top",
+        topTextField.attributedPlaceholder = NSAttributedString(string: "TOP",
                                                                              attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
-        bottomTextField.attributedPlaceholder = NSAttributedString(string: "Bottom",
+        bottomTextField.attributedPlaceholder = NSAttributedString(string: "BOTTOM",
                                                                    attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         
         setPictureAndShareButtonEnabled()
