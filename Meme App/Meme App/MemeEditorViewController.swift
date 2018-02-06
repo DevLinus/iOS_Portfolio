@@ -18,6 +18,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction func cancelButtonClick(_ sender: Any) {
         memeImageView.image = UIImage()
         shareButton.isEnabled = false
+        setDefaultText()
     }
     
     func setUPTextField (textField : UITextField){
@@ -42,14 +43,17 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         }
     }
     
-    fileprivate func SetupGUI() {
-        setUPTextField(textField: bottomTextField)
-        setUPTextField(textField: topTextField)
+    fileprivate func setDefaultText() {
         topTextField.attributedPlaceholder = NSAttributedString(string: "TOP",
                                                                 attributes:[NSAttributedStringKey.foregroundColor: UIColor.white])
         bottomTextField.attributedPlaceholder = NSAttributedString(string: "BOTTOM",
                                                                    attributes:                                                               [NSAttributedStringKey.foregroundColor: UIColor.white])
-        
+    }
+    
+    fileprivate func SetupGUI() {
+        setUPTextField(textField: bottomTextField)
+        setUPTextField(textField: topTextField)
+        setDefaultText()
         setPictureAndShareButtonEnabled()
         setUpToolbarsWithSpaceHolder()
     }
