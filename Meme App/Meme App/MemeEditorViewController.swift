@@ -46,9 +46,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         setUPTextField(textField: bottomTextField)
         setUPTextField(textField: topTextField)
         topTextField.attributedPlaceholder = NSAttributedString(string: "TOP",
-                                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+                                                                attributes:[NSAttributedStringKey.foregroundColor: UIColor.white])
         bottomTextField.attributedPlaceholder = NSAttributedString(string: "BOTTOM",
-                                                                   attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+                                                                   attributes:                                                               [NSAttributedStringKey.foregroundColor: UIColor.white])
         
         setPictureAndShareButtonEnabled()
         setUpToolbarsWithSpaceHolder()
