@@ -18,6 +18,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction func cancelButtonClick(_ sender: Any) {
         memeImageView.image = UIImage()
         shareButton.isEnabled = false
+        topTextField.text = ""
+        bottomTextField.text = "" 
     }
     
     func setUPTextField (textField : UITextField){
